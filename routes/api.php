@@ -6,7 +6,7 @@ use App\Http\Controllers\Api\EvidenceController;
 use App\Http\Controllers\Api\DashboardController;
 use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\Api\UserController;
-use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\Api\CaseMangment;
 use App\Http\Controllers\Api\ChatController;
 use App\Http\Controllers\Api\CommentController;
