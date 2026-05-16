@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\Evidence_Resource;
 use App\Http\Resources\Usecase_Resource;
 use App\Models\UseCase;
-use App\Models\Evidence;
 use App\Models\Evidences;
 use Carbon\Carbon;
 use Illuminate\Http\JsonResponse;
