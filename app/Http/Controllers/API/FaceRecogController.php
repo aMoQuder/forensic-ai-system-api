@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\FaceRecog;
 use App\Models\model_ai;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;

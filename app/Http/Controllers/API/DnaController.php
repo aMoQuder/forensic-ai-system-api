@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\DnaAnalysis;
 use App\Models\model_ai;
 use App\Services\DnaAnalysisService;
 use Illuminate\Http\Request;

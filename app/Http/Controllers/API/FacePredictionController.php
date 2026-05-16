@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\FacePrediction;
 use App\Models\model_ai;
 use App\Services\FacePredictionService;
 use Illuminate\Http\Request;
