@@ -28,7 +28,7 @@ class DeepFakeController extends Controller {
             $imageName = $folder . $imageName;
         }
         try {
-            $response = Http::timeout( 60 )
+            $response = Http::timeout( 180 )
             ->attach(
                 'file',
                 file_get_contents( $imageName ),

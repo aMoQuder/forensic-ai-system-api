@@ -16,7 +16,7 @@ class ForensicAiService
     public function askForensicAssistant(string $query): ?array
     {
         try {
-            $response = Http::timeout(60)->post("{$this->baseUrl}/forensicAssistant", [
+            $response = Http::timeout(180)->post("{$this->baseUrl}/forensicAssistant", [
                 "query" => $query,
                 "case_context" => "string",
                 "language" => "auto",

@@ -12,7 +12,7 @@ class DnaAnalysisService
     public function analyzeDna(?string $sequence, $file = null, string $panel = 'all'): ?array
     {
         try {
-            $request = Http::timeout(120)->asMultipart();
+            $request = Http::timeout(180)->asMultipart();
 
             if ($file) {
                 $request->attach(
