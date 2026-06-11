@@ -80,7 +80,7 @@ Route::middleware(['auth:sanctum', 'role:doctor'])->group(function () {
 
     Route::get('/doctor/dashboard-flutter', [DashboardController::class, 'DashboardFlutter']);
     Route::get('/doctor/dashboard-flutter/active-case', [DashboardController::class, 'ACtiveCasesList']);
-    Route::get('/doctor/dashboard-flutter/active-case', [DashboardController::class, 'CompletedCasesList']);
+    Route::get('/doctor/dashboard-flutter/complete-case', [DashboardController::class, 'CompletedCasesList']);
     Route::get('/doctor/dashboard-flutter/evidence-list', [DashboardController::class, 'EvidenceList']);
 
     // dashboard web
