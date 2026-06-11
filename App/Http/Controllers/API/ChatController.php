@@ -24,9 +24,15 @@ class ChatController extends Controller {
         return response()->json( [ 'data' => $conversations ] );
     }
 
-    public function getMessages( Conversation $conversation ) {
-        if ( $conversation->user_id !== Auth::id() ) {
-            return response()->json( [ 'error' => 'Unauthorized' ], 403 );
+    public function getMessages( $conversation ) {
+
+
+        $Conversation = Conversation::where( 'user_id', Auth::id() )->find($conversation );
+        if ( !$Conversation ) {
+            return response()->json( [
+                'status' => false,
+                'message' => 'errore ! item not found'
+            ] );
         }
 
         $messages = $conversation->messages()->orderBy( 'created_at', 'asc' )->get();

@@ -7,7 +7,7 @@ use App\Http\Controllers\API\DashboardController;
 use App\Http\Controllers\API\ContactController;
 use App\Http\Controllers\API\UserController;
 use App\Http\Controllers\API\AuthController;
-use App\Http\Controllers\API\CaseMangment;
+use App\Http\Controllers\API\CaseController;
 use App\Http\Controllers\API\ChatController;
 use App\Http\Controllers\API\CommentController;
 use App\Http\Controllers\API\DeepFakeController;
@@ -42,7 +42,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
 
 Route::middleware(['auth:sanctum', 'role:admin'])->group(function () {
-// 1. Dashboard Page
+    // 1. Dashboard Page
     Route::get('admin/dashboard', [AdminPanalController::class, 'dashboard']);
 
     // 2. Doctor Hub Page (All Doctors)
@@ -87,12 +87,12 @@ Route::middleware(['auth:sanctum', 'role:doctor'])->group(function () {
     Route::get('/doctor/dashboard', [DashboardController::class, 'index']);
 
     // use-case
-    Route::get('all-cases', [CaseMangment::class, 'index']);
-    Route::post('add/use-case', [CaseMangment::class, 'store']);
-    Route::put('update/use-case/{usecase}', [CaseMangment::class, 'update']);
-    Route::delete('delete/use-case/{usecase}', [CaseMangment::class, 'destroy']);
-    Route::get('show/use-case/{usecase}', [CaseMangment::class, 'show']);
-    Route::get('toggle-active/use-case/{usecase}', [CaseMangment::class, 'toggle']);
+    Route::get('all-cases', [CaseController::class, 'index']);
+    Route::post('add/use-case', [CaseController::class, 'store']);
+    Route::put('update/use-case/{usecase}', [CaseController::class, 'update']);
+    Route::delete('delete/use-case/{usecase}', [CaseController::class, 'destroy']);
+    Route::get('show/use-case/{usecase}', [CaseController::class, 'show']);
+    Route::get('toggle-active/use-case/{usecase}', [CaseController::class, 'toggle']);
 
     // evidence
     Route::post('save-as-evidence', [EvidenceController::class, 'store']);
@@ -108,7 +108,7 @@ Route::middleware(['auth:sanctum', 'role:doctor'])->group(function () {
 
     // chat
     Route::get('/chat', [ChatController::class, 'getConversations']);
-    Route::get('/conversations/{conversation}/messages', [ChatController::class, 'getMessages']);
+    Route::get('/conversations/{conversation_id}/messages', [ChatController::class, 'getMessages']);
     Route::post('/chat/send', [ChatController::class, 'sendMessage']);
 
 

@@ -158,9 +158,8 @@ class PostController extends Controller {
         return response()->json( [
             'status'  => true,
             'id'    => $post_id,
-            'share_link' => url( '/view-'. $post->type.'/'.$post_id ),
+            'share_link' => url( 'api/view-'. $post->type.'/'.$post_id ),
         ] );
-
     }
 
     public function show( $id, Request $request ) {

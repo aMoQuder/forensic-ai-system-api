@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 
-class CaseMangment extends Controller {
+class CaseController extends Controller {
 
     public function index( Request $request ): JsonResponse {
         $cases = UseCase::where( 'user_id', Auth::id() )
